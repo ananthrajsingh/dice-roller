@@ -20,6 +20,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
     android:orientation="vertical"
+
     tools:context=".MainActivity">
 
     <TextView
@@ -38,3 +39,13 @@
         android:text="@string/roll" />
 
 </LinearLayout>
+
+    <!-- COMPLETED (01) Remove the code above and add the LinearLayout code from the classroom -->
+
+    <!-- COMPLETED (02) Add the Button
+         Use "wrap_content" for its width and height
+         Use "center_horizontal" for the layout_gravity -->
+
+    <!-- COMPLETED (03) Position the views
+         Remember to set the orientation of the LinearLayout to vertical
+         and use layout_gravity to align the elements so they are centered as expected -->
