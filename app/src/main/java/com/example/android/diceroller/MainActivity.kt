@@ -19,11 +19,13 @@ package com.example.android.diceroller
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    // COMPLETED (01) Extract the image view variable here. You will need to use lateinit
+    lateinit var diceImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,30 +35,25 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice()
         }
+
+        diceImage = findViewById(R.id.dice_image)
+        // COMPLETED (02) Initialize the image view variable here
     }
 
     private fun rollDice() {
-        val randomInt = Random().nextInt(6) + 1
-        // COMPLETED (04) Choose the right drawable resource based on the value of randomInt
-        // Tip: Use a when expression
-        val vectorResource : Int = when(randomInt) {
+        val drawableResource = when (Random().nextInt(6) + 1) {
+
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
-            6 -> R.drawable.dice_6
-            else -> R.drawable.empty_dice
+            else -> R.drawable.dice_6
         }
 
-        // COMPLETED (03) Get a reference to the imageView instead
-        val resultImage: ImageView = findViewById(R.id.dice_image)
+        // COMPLETED (03) Remove this local variable so that you use your new diceImage field
 
-
-
-        // COMPLETED (05) Make the ImageView show the chosen drawable resource
-
-        resultImage.setImageResource(vectorResource)
+        diceImage.setImageResource(drawableResource)
 
     }
 }

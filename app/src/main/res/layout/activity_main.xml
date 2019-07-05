@@ -24,16 +24,12 @@
 
     tools:context=".MainActivity">
 
-    <!-- COMPLETED (01) Add the dice images to the drawable folder -->
-
-    <!-- COMPLETED (02) Remove the TextView and add the ImageView -->
-    <!-- Make it use dice_1 drawable -->
     <ImageView
         android:id="@+id/dice_image"
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/empty_dice"/>
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/empty_dice" />
 
     <Button
         android:id="@+id/roll_button"
