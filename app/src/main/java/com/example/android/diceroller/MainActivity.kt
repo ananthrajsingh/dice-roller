@@ -19,6 +19,7 @@ package com.example.android.diceroller
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         // COMPLETED (03) Get a reference to the imageView instead
         val resultImage: ImageView = findViewById(R.id.dice_image)
+
 
 
         // COMPLETED (05) Make the ImageView show the chosen drawable resource
