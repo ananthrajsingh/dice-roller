@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun rollDice() {
         val drawableResource = when (Random().nextInt(6) + 1) {
+
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
@@ -53,5 +54,6 @@ class MainActivity : AppCompatActivity() {
         // COMPLETED (03) Remove this local variable so that you use your new diceImage field
 
         diceImage.setImageResource(drawableResource)
+
     }
 }
