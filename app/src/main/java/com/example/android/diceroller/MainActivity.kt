@@ -18,8 +18,10 @@ package com.example.android.diceroller
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,17 +29,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // COMPLETED (02) Use findViewById to get a reference to the button
-        // and assign it to an immutable variable called rollButton
-        val rollButton : Button = findViewById(R.id.roll_button)
-
-        // COMPLETED (03) set the OnClickListener for the button
+        val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener {
-            Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show()
+            rollDice()
         }
-
-        // COMPLETED (04) Show a Toast when the OnClickListener is called
-
     }
 
+    private fun rollDice() {
+        val randomInt = Random().nextInt(6) + 1
+        // COMPLETED (04) Choose the right drawable resource based on the value of randomInt
+        // Tip: Use a when expression
+        val vectorResource : Int = when(randomInt) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            6 -> R.drawable.dice_6
+            else -> R.drawable.empty_dice
+        }
+
+        // COMPLETED (03) Get a reference to the imageView instead
+        val resultImage: ImageView = findViewById(R.id.dice_image)
+
+
+
+        // COMPLETED (05) Make the ImageView show the chosen drawable resource
+
+        resultImage.setImageResource(vectorResource)
+
+    }
 }
